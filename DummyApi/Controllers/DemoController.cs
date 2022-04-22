@@ -44,7 +44,7 @@ namespace DummyApi.Controllers
             }
             else
             {
-                return NotFound($"Delay for requestId <{requestId}> does not exist.");
+                return Ok($"Delay for requestId <{requestId}> does not exist.");
             }
         }
 
@@ -77,7 +77,7 @@ namespace DummyApi.Controllers
             }
             else
             {
-                return NotFound($"error for requestId <{requestId}> does not exist.");
+                return Ok($"Error for requestId <{requestId}> does not exist.");
             }
         }
     }
