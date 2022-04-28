@@ -13,7 +13,7 @@ namespace DemoCustomPolicy
         private static readonly IBitGetter bitGetter = new BitGetter();
         private static readonly INumberGenerator numberGenerator =
             new NumberGenerator(bitGetter);
-        private static readonly INumberGenerator numberGeneratorRange =
+        private static readonly INumberGeneratorInRange numberGeneratorRange =
             new NumberGeneratorInRange(numberGenerator, 91, 100);
 
         static async Task Main(string[] args)
@@ -30,7 +30,7 @@ namespace DemoCustomPolicy
             Console.WriteLine("######################################");
             Console.WriteLine("Generating numbers without policy...");
             Console.WriteLine("######################################");
-            Verify(() => numberGenerator.Next(91, 100), 1000);
+            Verify(() => numberGenerator.Next(7), 1000);
         }
 
         private static void WithPolicy()
@@ -38,7 +38,7 @@ namespace DemoCustomPolicy
             Console.WriteLine("######################################");
             Console.WriteLine("Generating numbers with policy...");
             Console.WriteLine("######################################");
-            Verify(() => numberGeneratorRange.Next(91, 100), 1000);
+            Verify(() => numberGeneratorRange.Next(), 1000);
         }
 
         private static void Verify(Func<int> generator, int tries)

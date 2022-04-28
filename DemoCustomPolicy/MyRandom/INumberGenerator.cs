@@ -2,6 +2,6 @@
 {
     public interface INumberGenerator
     {
-        int Next(int min, int max);
+        int Next(int bitCount);
     }
 }
