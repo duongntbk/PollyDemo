@@ -63,7 +63,7 @@ Generating numbers with policy...
 ######################################
 Starting long running task...
 ######################################
-Timeout: Task was cancelled after: 500ms
+Timeout: Task did not complete within: 500ms
 ```
 
 # License

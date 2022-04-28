@@ -27,7 +27,7 @@ namespace DemoCustomPolicy.MyPolicies
             if (timeoutTask.IsCompleted)
             {
                 throw new DuongTimeoutException(
-                    $"{context.OperationKey}: Task was cancelled after: {_timeoutInMilliSecs}ms");
+                    $"{context.OperationKey}: Task did not complete within: {_timeoutInMilliSecs}ms");
             }
 
             return await delegateTask;

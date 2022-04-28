@@ -76,7 +76,7 @@ namespace DemoCustomPolicy
                 {
                     await Task.Delay(1000);
                 }, pollyContext);
-                Console.WriteLine("Task was not cancelled.");
+                Console.WriteLine("Task ran to completion.");
             }
             catch (DuongTimeoutException ex)
             {
